@@ -19,6 +19,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::addTask()
 {
-    qDebug()<<"User Clicked on the Button";
+    qDebug()<<"Adding new task";
+    Task* task = new Task("Untitled task");
+    mTasks.append(task);
+    ui->tasksLayout->addWidget(task);
 }
 
