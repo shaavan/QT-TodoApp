@@ -12,14 +12,17 @@ TARGET = QT-TodoApp
 TEMPLATE = app
 
 SOURCES += \
+    Task.cpp \
     main.cpp \
     MainWindow.cpp
 
 HEADERS += \
-    MainWindow.h
+    MainWindow.h \
+    Task.h
 
 FORMS += \
-    MainWindow.ui
+    MainWindow.ui \
+    Task.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
