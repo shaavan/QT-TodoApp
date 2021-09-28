@@ -21,6 +21,7 @@ public:
 
 public slots:
     void addTask();
+    void removeTask(Task* Task);
 
 private:
     Ui::MainWindow *ui;
