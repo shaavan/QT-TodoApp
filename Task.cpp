@@ -13,6 +13,8 @@ Task::Task(const QString& name, QWidget *parent) :
     connect(ui->removeButton, &QPushButton::clicked, [this] {
         emit removed(this);
     });
+    connect(ui->checkbox, &QCheckBox::toggled,
+            this, &Task::checked);
 }
 
 Task::~Task()
@@ -47,4 +49,12 @@ QString Task::name() const  //Getter: Get Task's name
 bool Task::isCompleted() const  //Getter: Gets state of Task
 {
     return ui->checkbox->isChecked();
+}
+
+void Task::checked(bool checked)
+{
+    QFont font(ui->checkbox->font());
+    font.setStrikeOut(checked);
+    ui->checkbox->setFont(font);
+    emit statusChanged(this);
 }
